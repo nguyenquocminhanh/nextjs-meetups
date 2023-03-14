@@ -37,7 +37,7 @@ export async function getStaticPaths() {
     client.close();
      
     return {
-        fallback: false,    // ko can co gang pre-render nhung page khac ngoai m1, m2 for the incomming request
+        fallback: 'blocking',    // ko can co gang pre-render nhung page khac ngoai m1, m2 for the incomming request
         paths: meetups.map(meetup => ({
             params: {meetupId: meetup._id.toString()}
         }))
